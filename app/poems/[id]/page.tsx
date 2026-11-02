@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { createClient } from "../../../lib/supabase";
@@ -41,7 +41,7 @@ type CommentWithAuthor = Comment & {
   author: CommentAuthor | null;
 };
 
-export default function PoemPage() {
+function PoemPageContent() {
   const params = useParams();
   const id = params.id as string;
 
@@ -53,7 +53,9 @@ export default function PoemPage() {
   const [sending, setSending] = useState(false);
   const [message, setMessage] = useState("");
 
-  async function loadComments(supabase: ReturnType<typeof createClient>) {
+  async function loadComments(
+    supabase: ReturnType<typeof createClient>
+  ) {
     const { data, error } = await supabase
       .from("comments")
       .select("id, content, author_id, status, created_at")
@@ -128,8 +130,12 @@ export default function PoemPage() {
         if (cancelled) return;
       } else {
         if (error) {
-          console.error("Ошибка загрузки стихотворения:", error.message);
+          console.error(
+            "Ошибка загрузки стихотворения:",
+            error.message
+          );
         }
+
         setPoem(null);
       }
 
@@ -145,7 +151,9 @@ export default function PoemPage() {
     };
   }, [id]);
 
-  async function sendComment(event: React.FormEvent<HTMLFormElement>) {
+  async function sendComment(
+    event: React.FormEvent<HTMLFormElement>
+  ) {
     event.preventDefault();
     setMessage("");
 
@@ -202,9 +210,13 @@ export default function PoemPage() {
       <main className="single-poem-page single-poem-page-refined">
         <div className="single-poem-not-found">
           <span>✧</span>
-          <p className="single-poem-eyebrow">СТРАНИЦА НЕ НАЙДЕНА</p>
+          <p className="single-poem-eyebrow">
+            СТРАНИЦА НЕ НАЙДЕНА
+          </p>
           <h1>Стихотворение не найдено</h1>
-          <p>Возможно, произведение ещё не опубликовано или было удалено.</p>
+          <p>
+            Возможно, произведение ещё не опубликовано или было удалено.
+          </p>
           <Link href="/" className="single-poem-back-button">
             Вернуться на главную
           </Link>
@@ -272,7 +284,10 @@ export default function PoemPage() {
 
             <div className="single-poem-author-info">
               <p>АВТОР ПРОИЗВЕДЕНИЯ</p>
-              <Link href={`/authors/${encodeURIComponent(author.username)}`}>
+
+              <Link
+                href={`/authors/${encodeURIComponent(author.username)}`}
+              >
                 {author.display_name || author.username}
               </Link>
             </div>
@@ -284,11 +299,16 @@ export default function PoemPage() {
 
       <section className="comments-section comments-section-refined">
         <div className="comments-heading">
-          <p className="single-poem-eyebrow">ГОЛОСА ЧИТАТЕЛЕЙ</p>
+          <p className="single-poem-eyebrow">
+            ГОЛОСА ЧИТАТЕЛЕЙ
+          </p>
+
           <h2>Отклики читателей</h2>
+
           <p className="comments-description">
             Делитесь впечатлениями и поддерживайте авторов.
           </p>
+
           <div className="single-poem-title-divider">
             <span />
             ✧
@@ -296,8 +316,13 @@ export default function PoemPage() {
           </div>
         </div>
 
-        <form className="comment-form comment-form-refined" onSubmit={sendComment}>
-          <label htmlFor="comment">Оставить комментарий</label>
+        <form
+          className="comment-form comment-form-refined"
+          onSubmit={sendComment}
+        >
+          <label htmlFor="comment">
+            Оставить комментарий
+          </label>
 
           <textarea
             id="comment"
@@ -330,15 +355,22 @@ export default function PoemPage() {
             </div>
           ) : (
             comments.map((comment) => (
-              <article className="comment-card comment-card-refined" key={comment.id}>
+              <article
+                className="comment-card comment-card-refined"
+                key={comment.id}
+              >
                 <div className="comment-author comment-author-refined">
                   {comment.author?.avatar_url ? (
                     <img
                       src={comment.author.avatar_url}
-                      alt={comment.author.display_name || "Читатель"}
+                      alt={
+                        comment.author.display_name || "Читатель"
+                      }
                     />
                   ) : (
-                    <div className="comment-avatar-placeholder">✒</div>
+                    <div className="comment-avatar-placeholder">
+                      ✒
+                    </div>
                   )}
 
                   <div>
@@ -356,14 +388,13 @@ export default function PoemPage() {
                     )}
 
                     <p>
-                      {new Date(comment.created_at).toLocaleDateString(
-                        "ru-RU",
-                        {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        }
-                      )}
+                      {new Date(
+                        comment.created_at
+                      ).toLocaleDateString("ru-RU", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
                     </p>
                   </div>
                 </div>
@@ -383,5 +414,22 @@ export default function PoemPage() {
         <span>✦</span>
       </footer>
     </main>
+  );
+}
+
+export default function PoemPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="single-poem-page single-poem-page-refined">
+          <div className="single-poem-loading">
+            <span>✦</span>
+            <p>Открываем страницу произведения...</p>
+          </div>
+        </main>
+      }
+    >
+      <PoemPageContent />
+    </Suspense>
   );
 }
