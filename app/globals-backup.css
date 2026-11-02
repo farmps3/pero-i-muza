@@ -1,0 +1,4409 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #f7f3ec;
+  --paper: #fffdf8;
+  --text: #30251f;
+  --muted: #82766d;
+  --brown: #79543e;
+  --brown-dark: #4b3327;
+  --accent: #b78b65;
+  --border: #e8dfd3;
+  --shadow: 0 12px 35px rgba(66, 46, 32, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  min-height: 88px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(255, 253, 248, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--brown-dark);
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #65564c;
+  font-size: 13px;
+}
+
+.navigation a {
+  transition: color 0.2s;
+}
+
+.navigation a:hover {
+  color: var(--accent);
+}
+
+.header-button {
+  padding: 11px 23px;
+  border: 1px solid var(--brown);
+  border-radius: 3px;
+  color: var(--brown);
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.header-button:hover {
+  background: var(--brown);
+  color: white;
+}
+
+.hero {
+  min-height: 590px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background:
+    linear-gradient(90deg, rgba(247,243,236,0.97), rgba(247,243,236,0.78)),
+    url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1800');
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 500;
+  line-height: 0.98;
+  color: var(--brown-dark);
+}
+
+.hero-description {
+  max-width: 530px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 25px;
+  border: 1px solid var(--brown);
+  border-radius: 3px;
+  font-size: 12px;
+  transition: 0.25s;
+}
+
+.primary-button {
+  background: var(--brown);
+  color: white;
+}
+
+.primary-button:hover {
+  background: var(--brown-dark);
+}
+
+.secondary-button {
+  color: var(--brown);
+  background: transparent;
+}
+
+.secondary-button:hover {
+  background: var(--paper);
+}
+
+.hero-decoration {
+  width: 290px;
+  height: 350px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(121, 84, 62, 0.25);
+  background: rgba(255, 253, 248, 0.48);
+  box-shadow: var(--shadow);
+  transform: rotate(3deg);
+}
+
+.book-symbol {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 115px;
+  color: var(--brown);
+}
+
+.intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 25px 75px;
+  text-align: center;
+}
+
+.intro h2,
+.section h2,
+.authors-section h2,
+.join-section h2 {
+  margin-bottom: 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--brown-dark);
+}
+
+.intro p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.section {
+  padding: 70px 7%;
+}
+
+.section-heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.poem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.poem-card {
+  min-height: 280px;
+  padding: 30px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.poem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(66, 46, 32, 0.11);
+}
+
+.poem-card h3 {
+  margin: 15px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--brown-dark);
+}
+
+.category {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.excerpt {
+  margin: 16px 0;
+  color: var(--muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.poem-author {
+  margin-top: 18px;
+  color: var(--brown);
+  font-size: 12px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--brown);
+  font-size: 12px;
+  border-bottom: 1px solid var(--accent);
+}
+
+.authors-section {
+  padding: 85px 7%;
+  background: #eee7dc;
+}
+
+.authors-section > h2,
+.authors-section > p {
+  text-align: center;
+}
+
+.authors-section > p {
+  margin-bottom: 40px;
+  color: var(--muted);
+}
+
+.author-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.author-card {
+  padding: 30px 20px;
+  text-align: center;
+  background: var(--paper);
+  border: 1px solid var(--border);
+}
+
+.author-avatar {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e7d9c8;
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+}
+
+.author-card h3 {
+  margin-bottom: 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  color: var(--brown-dark);
+}
+
+.author-card p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.join-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--brown-dark);
+  color: #fffaf2;
+}
+
+.join-section h2 {
+  color: #fffaf2;
+}
+
+.join-section p {
+  max-width: 580px;
+  margin: 0 auto 30px;
+  color: #d7c8b8;
+}
+
+.join-section .primary-button {
+  background: #fffaf2;
+  color: var(--brown-dark);
+  border-color: #fffaf2;
+}
+
+.join-section .primary-button:hover {
+  background: #e8dfd3;
+}
+
+.footer {
+  padding: 35px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #2d211b;
+  color: #d8c9b9;
+  font-size: 11px;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .header {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+  }
+
+  .navigation {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 75px 6%;
+  }
+
+  .hero-decoration {
+    width: 210px;
+    height: 270px;
+  }
+
+  .poem-grid,
+  .author-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .navigation {
+    width: 100%;
+    justify-content: center;
+    gap: 12px 18px;
+    font-size: 11px;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 75px 7%;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .intro {
+    padding: 65px 22px;
+  }
+
+  .section,
+  .authors-section {
+    padding: 60px 6%;
+  }
+
+  .poem-grid,
+  .author-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poem-card {
+    padding: 25px;
+  }
+
+  .join-section {
+    padding: 75px 22px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===== ПЕРО И МУЗА — ДИЗАЙН РЕГИСТРАЦИИ ===== */
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background:
+    radial-gradient(ellipse at top left, #e9dcc8 0%, transparent 45%),
+    #f5efe5;
+  color: #403027;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 510px;
+  padding: 55px 55px 45px;
+  background: #fffdf8;
+  border: 1px solid #e5d8c7;
+  box-shadow: 0 20px 70px rgba(70, 48, 32, 0.10);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.register-logo {
+  display: inline-block;
+  color: #593d2d;
+  font-size: 35px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: -1.5px;
+}
+
+.register-label {
+  margin: 17px 0 25px;
+  color: #a18468;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.register-card h1 {
+  margin: 0 0 15px;
+  font-size: 37px;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.register-description {
+  margin: 0 auto 32px;
+  max-width: 350px;
+  color: #877667;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.register-card form label {
+  margin: 16px 0 8px;
+  color: #5b4536;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.register-card form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  border: 1px solid #e5d9ca;
+  border-radius: 2px;
+  outline: none;
+  background: #faf7f1;
+  color: #403027;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.register-card form input:focus {
+  border-color: #987456;
+}
+
+.register-card form input::placeholder {
+  color: #b5a797;
+}
+
+.register-card form button {
+  margin-top: 28px;
+  padding: 17px;
+  border: none;
+  border-radius: 2px;
+  background: #563d2e;
+  color: #fffaf3;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.register-card form button:hover {
+  background: #76563f;
+}
+
+.register-card form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-message {
+  margin-top: 20px;
+  padding: 13px;
+  background: #f3eee4;
+  color: #654b36;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.register-login {
+  margin-top: 27px;
+  color: #887768;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.register-login a,
+.register-back {
+  color: #684a35;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-login a:hover,
+.register-back:hover {
+  text-decoration: underline;
+}
+
+.register-back {
+  display: inline-block;
+  margin-top: 20px;
+  color: #a18468;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .register-page {
+    padding: 20px 14px;
+  }
+
+  .register-card {
+    padding: 40px 24px 32px;
+  }
+
+  .register-logo {
+    font-size: 30px;
+  }
+
+  .register-card h1 {
+    font-size: 30px;
+  }
+}
+
+/* Личный кабинет автора */
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background:
+    radial-gradient(ellipse at top left, #e9dcc8 0%, transparent 45%),
+    #f5efe5;
+  color: #403027;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 50px;
+  background: #fffdf8;
+  border: 1px solid #e5d8c7;
+  box-shadow: 0 20px 70px rgba(70, 48, 32, 0.10);
+  text-align: center;
+}
+
+.profile-card h1 {
+  margin: 0 0 15px;
+  font-size: 34px;
+  font-weight: normal;
+}
+
+.profile-card form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-card form label {
+  margin: 16px 0 8px;
+  color: #5b4536;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.profile-card form input,
+.profile-card form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #e5d9ca;
+  background: #faf7f1;
+  color: #403027;
+  font: 14px Arial, sans-serif;
+  resize: vertical;
+}
+
+.profile-card form button {
+  margin-top: 25px;
+  padding: 17px;
+  border: none;
+  background: #563d2e;
+  color: #fffaf3;
+  font: 16px Georgia, serif;
+  cursor: pointer;
+}
+
+.profile-card form button:hover {
+  background: #76563f;
+}
+
+.profile-card form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 35px 22px;
+  }
+
+  .profile-card h1 {
+    font-size: 28px;
+  }
+}
+
+/* Форма публикации стихотворений */
+.profile-card form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #e5d9ca;
+  background: #faf7f1;
+  color: #403027;
+  font: 14px Arial, sans-serif;
+}
+
+.profile-card form textarea {
+  line-height: 1.8;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Мои произведения */
+.my-poems-card {
+  max-width: 760px;
+}
+
+.my-poems-button {
+  display: inline-block;
+  margin: 5px 0 25px;
+  padding: 15px 24px;
+  background: #563d2e;
+  color: #fffaf3;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+
+.my-poems-button:hover {
+  background: #76563f;
+}
+
+.my-poems-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.my-poem-item {
+  padding: 24px 0;
+  border-top: 1px solid #e5d8c7;
+}
+
+.my-poem-item h2 {
+  margin: 0 0 10px;
+  color: #563d2e;
+  font-size: 23px;
+  font-weight: normal;
+}
+
+.my-poem-status {
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 6px 10px;
+  background: #f3eee4;
+  color: #76563f;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.my-poem-content {
+  color: #514237;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.my-poem-date {
+  color: #a18468;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Панель модерации «Перо и Муза» */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f5efe5;
+  color: #49372b;
+}
+
+.admin-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fffdf8;
+  border: 1px solid #e6d9c8;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(75, 52, 32, 0.08);
+}
+
+.admin-back {
+  color: #896b50;
+  text-decoration: none;
+}
+
+.admin-eyebrow {
+  margin-top: 35px;
+  color: #a17c57;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.admin-card h1 {
+  margin: 10px 0;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.admin-description {
+  color: #8b7968;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.admin-message,
+.admin-empty {
+  padding: 15px;
+  background: #f5efe5;
+  border-radius: 10px;
+  color: #71583f;
+  line-height: 1.5;
+}
+
+.admin-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.admin-poem {
+  padding: 25px;
+  background: #fffaf1;
+  border: 1px solid #eadcc9;
+  border-radius: 14px;
+}
+
+.admin-poem-meta {
+  color: #a18465;
+  font-size: 13px;
+}
+
+.admin-poem h2 {
+  margin: 12px 0;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.admin-poem-content {
+  color: #59483a;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.admin-actions button,
+.admin-refresh {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.admin-approve {
+  background: #687b55;
+  color: white;
+}
+
+.admin-reject {
+  background: #a65e50;
+  color: white;
+}
+
+.admin-refresh {
+  margin-top: 25px;
+  background: #e9ddcc;
+  color: #59432f;
+}
+
+.admin-actions button:hover,
+.admin-refresh:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 20px 12px;
+  }
+
+  .admin-card {
+    padding: 24px 18px;
+  }
+
+  .admin-card h1 {
+    font-size: 29px;
+  }
+}
+
+/* Главная страница — Перо и Муза */
+
+.home-page {
+  min-height: 100vh;
+  background: #f6f0e6;
+  color: #49372b;
+}
+
+.home-header {
+  min-height: 85px;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid #e4d8c8;
+}
+
+.home-logo {
+  color: #49372b;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: bold;
+}
+
+.home-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.home-nav a {
+  color: #725b48;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.home-nav a:hover {
+  color: #a07850;
+}
+
+.home-hero {
+  padding: 110px 20px 120px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #fffaf1 0%, #f6f0e6 75%);
+}
+
+.home-subtitle,
+.home-section-label {
+  color: #a17d59;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.home-hero h1 {
+  margin: 28px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.home-intro {
+  max-width: 590px;
+  margin: 0 auto 35px;
+  color: #806e5d;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.home-write-button {
+  display: inline-block;
+  padding: 16px 30px;
+  background: #72543c;
+  color: #fffaf2;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.home-write-button:hover {
+  background: #49372b;
+}
+
+.home-poems-section {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 75px 25px 100px;
+}
+
+.home-poems-section > h2 {
+  margin: 15px 0 40px;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.home-poems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.home-poem-card {
+  padding: 30px;
+  background: #fffdf8;
+  border: 1px solid #e8ddcf;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(70, 48, 30, 0.04);
+}
+
+.home-poem-language {
+  color: #a17d59;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.home-poem-card h3 {
+  margin: 20px 0;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.home-poem-content {
+  color: #665344;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.home-poem-date {
+  margin-top: 25px;
+  color: #a18d79;
+  font-size: 12px;
+}
+
+.home-empty {
+  padding: 35px;
+  background: #fffaf1;
+  border: 1px solid #e8ddcf;
+  color: #806e5d;
+  line-height: 1.8;
+  border-radius: 8px;
+}
+
+.home-footer {
+  padding: 35px 20px;
+  text-align: center;
+  border-top: 1px solid #e4d8c8;
+  color: #907d69;
+  font-family: Georgia, serif;
+}
+
+@media (max-width: 700px) {
+  .home-header {
+    flex-direction: column;
+    padding: 22px 15px;
+  }
+
+  .home-nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .home-hero {
+    padding: 75px 20px;
+  }
+
+  .home-poems-section {
+    padding: 55px 18px;
+  }
+}
+
+/* Авторские страницы — Перо и Муза */
+
+.author-page {
+  min-height: 100vh;
+  background: #f6f0e6;
+  color: #49372b;
+}
+
+.author-header {
+  min-height: 80px;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4d8c8;
+}
+
+.author-header a {
+  color: #725b48;
+  text-decoration: none;
+}
+
+.author-logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.author-profile {
+  padding: 75px 20px 85px;
+  text-align: center;
+  background: #fffaf1;
+}
+
+.author-avatar,
+.author-avatar-placeholder {
+  width: 125px;
+  height: 125px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #eadcc9;
+}
+
+.author-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ddcc;
+  color: #72543c;
+  font-family: Georgia, serif;
+  font-size: 48px;
+}
+
+.author-label {
+  color: #a17d59;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.author-profile h1 {
+  margin: 20px 0 8px;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 6vw, 55px);
+  font-weight: 400;
+}
+
+.author-username {
+  color: #a18465;
+  font-size: 14px;
+}
+
+.author-bio {
+  max-width: 600px;
+  margin: 25px auto 0;
+  color: #806e5d;
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.author-works {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 75px 25px 90px;
+}
+
+.author-works h2 {
+  margin: 15px 0 35px;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.author-poems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.author-poem {
+  padding: 30px;
+  background: #fffdf8;
+  border: 1px solid #e8ddcf;
+  border-radius: 8px;
+}
+
+.author-poem-language {
+  color: #a17d59;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.author-poem h3 {
+  margin: 20px 0;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.author-poem-content {
+  color: #665344;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.author-poem-date {
+  margin-top: 25px;
+  color: #a18d79;
+  font-size: 12px;
+}
+
+.author-empty {
+  padding: 30px;
+  background: #fffaf1;
+  color: #806e5d;
+  border: 1px solid #e8ddcf;
+  border-radius: 8px;
+}
+
+.author-footer {
+  padding: 35px 20px;
+  text-align: center;
+  border-top: 1px solid #e4d8c8;
+  color: #907d69;
+  font-family: Georgia, serif;
+}
+
+@media (max-width: 600px) {
+  .author-header {
+    padding: 18px;
+  }
+
+  .author-profile {
+    padding: 55px 18px;
+  }
+
+  .author-works {
+    padding: 55px 18px;
+  }
+}
+
+/* Каталог авторов — Перо и Муза */
+
+.authors-page {
+  min-height: 100vh;
+  background: #f6f0e6;
+  color: #49372b;
+}
+
+.authors-header {
+  min-height: 80px;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4d8c8;
+}
+
+.authors-header a {
+  color: #725b48;
+  text-decoration: none;
+}
+
+.authors-logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.authors-hero {
+  padding: 75px 20px;
+  text-align: center;
+  background: #fffaf1;
+}
+
+.authors-label {
+  color: #a17d59;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.authors-hero h1 {
+  margin: 20px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 400;
+}
+
+.authors-hero > p:last-child {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #806e5d;
+  line-height: 1.8;
+}
+
+.authors-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 25px 90px;
+}
+
+.authors-search {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 45px;
+  padding: 16px 20px;
+  border: 1px solid #e2d4c3;
+  border-radius: 7px;
+  background: #fffdf8;
+  color: #49372b;
+  font-size: 15px;
+  outline: none;
+}
+
+.authors-search:focus {
+  border-color: #a17d59;
+}
+
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.authors-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 25px;
+  background: #fffdf8;
+  border: 1px solid #e8ddcf;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #49372b;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.authors-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(70, 48, 30, 0.08);
+}
+
+.authors-avatar,
+.authors-avatar-placeholder {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eadcc9;
+}
+
+.authors-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ddcc;
+  color: #72543c;
+  font-family: Georgia, serif;
+  font-size: 35px;
+}
+
+.authors-card h2 {
+  margin: 5px 0;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.authors-username {
+  margin: 5px 0 15px;
+  color: #a18465;
+  font-size: 13px;
+}
+
+.authors-bio {
+  min-height: 50px;
+  color: #806e5d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.authors-link {
+  margin-top: 18px;
+  color: #896747;
+  font-size: 14px;
+}
+
+.authors-empty {
+  padding: 30px;
+  text-align: center;
+  background: #fffaf1;
+  border: 1px solid #e8ddcf;
+  border-radius: 8px;
+  color: #806e5d;
+}
+
+@media (max-width: 600px) {
+  .authors-header {
+    padding: 18px;
+  }
+
+  .authors-content {
+    padding: 40px 18px;
+  }
+}
+
+.avatar-preview {
+  width: 130px;
+  height: 130px;
+  margin: 15px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee4d5;
+  border: 3px solid #c5a77d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  font-size: 48px;
+  color: #8b6847;
+}
+
+.profile-message {
+  margin-top: 18px;
+  text-align: center;
+  color: #795b3e;
+}
+
+.single-poem-page {
+  min-height: 100vh;
+  padding: 55px 20px;
+  background: #f5efe5;
+  color: #46372b;
+}
+
+.single-poem-back {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto 25px;
+  color: #8b6847;
+  text-decoration: none;
+}
+
+.single-poem-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 55px;
+  background: #fffdf8;
+  border: 1px solid #e5d8c6;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(70, 55, 43, 0.06);
+}
+
+.single-poem-language {
+  color: #a18462;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.single-poem-card h1 {
+  margin: 20px 0 10px;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.single-poem-date {
+  color: #9b8a78;
+  font-size: 13px;
+}
+
+.single-poem-content {
+  margin-top: 40px;
+  white-space: pre-wrap;
+  line-height: 2;
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.single-poem-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid #e5d8c6;
+}
+
+.single-poem-author img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.single-poem-author p {
+  margin: 0 0 5px;
+  color: #9b8a78;
+  font-size: 13px;
+}
+
+.single-poem-author a {
+  color: #795b3e;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .single-poem-card {
+    padding: 28px 20px;
+  }
+
+  .single-poem-card h1 {
+    font-size: 28px;
+  }
+}
+
+.home-poem-card h3 a {
+  color: #5c4533;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-poem-card h3 a:hover {
+  color: #a0784f;
+  text-decoration: underline;
+}
+
+.home-poem-read {
+  display: inline-block;
+  margin-top: 15px;
+  color: #98734e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.home-poem-read:hover {
+  text-decoration: underline;
+}
+
+.comments-section {
+  max-width: 760px;
+  margin: 45px auto;
+  color: #46372b;
+}
+
+.comments-section h2 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.comments-description {
+  color: #927e69;
+  margin-bottom: 30px;
+}
+
+.comment-form {
+  padding: 28px;
+  background: #fffdf8;
+  border: 1px solid #e5d8c6;
+  border-radius: 8px;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.comment-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #d9cbb8;
+  border-radius: 5px;
+  background: #fff;
+  color: #46372b;
+  font: inherit;
+  resize: vertical;
+}
+
+.comment-form button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 5px;
+  background: #795b3e;
+  color: white;
+  cursor: pointer;
+}
+
+.comment-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.comment-message {
+  margin-top: 15px;
+  color: #795b3e;
+}
+
+.comments-list {
+  margin-top: 30px;
+}
+
+.comments-empty {
+  color: #927e69;
+  padding: 20px 0;
+}
+
+.comment-card {
+  padding: 22px 0;
+  border-bottom: 1px solid #e5d8c6;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.comment-author img,
+.comment-avatar-placeholder {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.comment-author img {
+  object-fit: cover;
+}
+
+.comment-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee4d5;
+  color: #8b6847;
+  font-size: 22px;
+}
+
+.comment-author a {
+  color: #795b3e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.comment-author p {
+  margin: 4px 0 0;
+  color: #a18e7a;
+  font-size: 12px;
+}
+
+.comment-content {
+  margin: 15px 0 0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.admin-tabs button {
+  padding: 12px 22px;
+  border: 1px solid #cdb99f;
+  border-radius: 5px;
+  background: #fffdf8;
+  color: #795b3e;
+  cursor: pointer;
+}
+
+.admin-tabs button.active {
+  background: #795b3e;
+  color: white;
+}
+
+.admin-message {
+  padding: 12px;
+  margin: 20px 0;
+  background: #eee4d5;
+  border-radius: 5px;
+  color: #654a32;
+}
+
+.admin-item {
+  margin: 20px 0;
+  padding: 25px;
+  background: #fffdf8;
+  border: 1px solid #e5d8c6;
+  border-radius: 8px;
+}
+
+.admin-item h3 {
+  color: #5c4533;
+  font-family: Georgia, serif;
+}
+
+.admin-item-date {
+  color: #9b8a78;
+  font-size: 13px;
+}
+
+.admin-item-content {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: #46372b;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.admin-approve,
+.admin-reject,
+.admin-refresh {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-approve {
+  background: #557b55;
+}
+
+.admin-reject {
+  background: #9b5148;
+}
+
+.admin-refresh {
+  margin-top: 25px;
+  background: #795b3e;
+}
+
+.home-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 35px;
+}
+
+.home-category {
+  padding: 10px 18px;
+  border: 1px solid #d8c7b2;
+  border-radius: 25px;
+  background: #fffdf8;
+  color: #795b3e;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-category:hover {
+  background: #eee4d5;
+}
+
+.home-category.active {
+  background: #795b3e;
+  border-color: #795b3e;
+  color: white;
+}
+
+.home-search {
+  width: 100%;
+  max-width: 650px;
+  margin: 25px 0;
+}
+
+.home-search input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #d8c7b2;
+  border-radius: 8px;
+  background: #fffdf8;
+  color: #46372b;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.home-search input:focus {
+  border-color: #795b3e;
+}
+
+.home-search input::placeholder {
+  color: #a99987;
+}
+
+.home-poem-date a {
+  color: #795b3e;
+  text-decoration: none;
+}
+
+.home-poem-date a:hover {
+  text-decoration: underline;
+}
+
+.author-follow-button {
+  margin-top: 18px;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #795b3e;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.author-follow-button:hover {
+  background: #96734f;
+}
+
+.author-follow-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.author-followers {
+  margin-top: 20px;
+  color: #795b3e;
+}
+
+.author-follow-message {
+  margin-top: 15px;
+  color: #795b3e;
+  font-size: 14px;
+}
+
+.authors-header nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.authors-header nav a {
+  color: #795b3e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.authors-header nav a:hover {
+  text-decoration: underline;
+}
+
+.authors-followers {
+  margin: 12px 0;
+  color: #795b3e;
+  font-size: 14px;
+}
+
+.authors-followers strong {
+  font-weight: 700;
+}
+
+.author-header nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.author-header nav a {
+  color: #795b3e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.author-header nav a:hover {
+  text-decoration: underline;
+}
+
+.author-statistics {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+  margin: 30px 0 10px;
+}
+
+.author-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 90px;
+}
+
+.author-stat strong {
+  color: #795b3e;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.author-stat span {
+  color: #8c7967;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .author-statistics {
+    gap: 22px;
+  }
+
+  .author-stat {
+    min-width: 75px;
+  }
+
+  .author-stat strong {
+    font-size: 24px;
+  }
+}
+
+.following-section-title {
+  margin: 35px 0 20px;
+  color: #46372b;
+  font-size: 24px;
+}
+
+.following-feed {
+  margin-top: 65px;
+}
+
+.following-feed h2 {
+  margin-bottom: 25px;
+}
+
+.following-feed .author-poem h3 a {
+  color: #46372b;
+  text-decoration: none;
+}
+
+.following-feed .author-poem h3 a:hover {
+  color: #795b3e;
+}
+
+.following-feed .author-poem-date a {
+  color: #795b3e;
+  text-decoration: none;
+}
+
+.following-feed .author-poem-date a:hover {
+  text-decoration: underline;
+}
+
+.notifications-counter {
+  margin: 15px 0 25px;
+  color: #795b3e;
+  font-size: 15px;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.notification-card {
+  padding: 24px;
+  border: 1px solid #e2d5c5;
+  border-radius: 12px;
+  background: #fffdf8;
+}
+
+.notification-unread {
+  border-left: 4px solid #795b3e;
+  background: #f8f1e7;
+}
+
+.notification-content h3 {
+  margin: 12px 0;
+  color: #46372b;
+}
+
+.notification-label {
+  color: #795b3e;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.notification-date {
+  margin: 12px 0;
+  color: #9b8a78;
+  font-size: 13px;
+}
+
+.notification-read-button {
+  display: block;
+  margin-top: 15px;
+  padding: 9px 15px;
+  border: 1px solid #d8c7b2;
+  border-radius: 20px;
+  background: transparent;
+  color: #795b3e;
+  cursor: pointer;
+}
+
+.notification-read-button:hover {
+  background: #eee4d5;
+}
+
+.notification-author-link {
+  margin-top: 15px;
+}
+
+.notification-author-link a {
+  color: #795b3e;
+  text-decoration: none;
+}
+
+.notification-bell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  color: #795b3e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.notification-bell:hover {
+  color: #a17b53;
+}
+
+.notification-bell-icon {
+  font-size: 22px;
+}
+
+.notification-bell-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 20px;
+  background: #a34436;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.notification-bell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  color: #795b3e;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.notification-bell:hover {
+  color: #a17b53;
+}
+
+.notification-bell-icon {
+  font-size: 22px;
+}
+
+.notification-bell-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 20px;
+  background: #a34436;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid #e5d7c5;
+  border-radius: 20px;
+  background: #fffaf3;
+  color: #795b3e;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.like-button:hover {
+  background: #f5e9dc;
+  transform: translateY(-1px);
+}
+
+.like-button.liked {
+  color: #a34436;
+  border-color: #d9aaa1;
+}
+
+.like-heart {
+  font-size: 17px;
+}
+
+.like-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.popular-page {
+  min-height: 100vh;
+  background: #fbf7f0;
+}
+
+.popular-hero {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 75px 24px 45px;
+  text-align: center;
+}
+
+.popular-hero h1 {
+  margin: 15px 0;
+  color: #493626;
+  font-size: 48px;
+  font-family: Georgia, serif;
+}
+
+.popular-hero > p:last-child {
+  color: #806b57;
+  line-height: 1.8;
+}
+
+.popular-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.popular-list h2 {
+  margin-bottom: 30px;
+  color: #493626;
+  font-family: Georgia, serif;
+}
+
+.popular-place {
+  color: #a17b53;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.popular-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.popular-total-likes {
+  color: #a34436;
+  font-size: 13px;
+}
+.popular-description {
+  color: #806b57;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.popular-loading {
+  text-align: center;
+  padding: 50px 20px;
+  color: #806b57;
+}
+
+.popular-authors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.popular-author-card {
+  position: relative;
+  padding: 28px 22px;
+  text-align: center;
+  background: #fffaf3;
+  border: 1px solid #eadfce;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(80, 55, 30, 0.05);
+}
+
+.popular-author-place {
+  display: block;
+  color: #a17b53;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.popular-author-avatar {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+  border: 3px solid #eadfce;
+}
+
+.popular-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0e5d6;
+  color: #795b3e;
+  font-size: 32px;
+}
+
+.popular-author-card h3 {
+  color: #493626;
+  margin: 10px 0;
+}
+
+.popular-author-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.popular-author-bio {
+  color: #806b57;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.popular-author-stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+  color: #795b3e;
+  font-size: 13px;
+}
+
+.popular-author-link {
+  display: inline-block;
+  color: #a17b53;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.popular-author-link:hover {
+  color: #795b3e;
+  text-decoration: underline;
+}
+.my-poem-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.my-poem-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.my-poem-edit,
+.my-poem-save {
+  background: #795b3e;
+  color: white;
+  border: 1px solid #795b3e;
+}
+
+.my-poem-edit:hover,
+.my-poem-save:hover {
+  background: #5d432e;
+}
+
+.my-poem-delete {
+  background: #fff4f0;
+  color: #a34436;
+  border: 1px solid #dfb8ae;
+}
+
+.my-poem-delete:hover {
+  background: #f8e2dc;
+}
+
+.my-poem-cancel {
+  background: #f4eee5;
+  color: #795b3e;
+  border: 1px solid #e5d7c5;
+}
+
+.my-poem-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.my-poem-editor label {
+  color: #795b3e;
+  font-weight: 600;
+}
+
+.my-poem-editor input,
+.my-poem-editor select,
+.my-poem-editor textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dfd0bd;
+  border-radius: 8px;
+  background: #fffdf9;
+  color: #493626;
+  font: inherit;
+}
+
+.my-poem-editor textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.my-poem-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.profile-field-hint {
+  color: #9a826b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: -7px;
+  margin-bottom: 12px;
+}
+
+.profile-message-error {
+  color: #a34436;
+}
+
+.profile-public-link {
+  display: block;
+  margin-top: 22px;
+  color: #795b3e;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile-public-link:hover {
+  text-decoration: underline;
+}
+.profile-card-expanded {
+  max-width: 850px;
+  width: 100%;
+}
+
+.author-dashboard {
+  margin: 35px 0 25px;
+  text-align: left;
+}
+
+.author-dashboard h2 {
+  color: #493626;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+.author-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.author-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 130px;
+  padding: 18px 10px;
+  text-align: center;
+  background: #fffaf3;
+  border: 1px solid #eadfce;
+  border-radius: 12px;
+}
+
+.author-stat-icon {
+  font-size: 23px;
+}
+
+.author-stat-card strong {
+  color: #795b3e;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.author-stat-card > span:last-child {
+  color: #806b57;
+  font-size: 12px;
+}
+
+.author-dashboard-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.author-dashboard-links a {
+  padding: 10px 14px;
+  background: #f3e8d9;
+  color: #795b3e;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.author-dashboard-links a:hover {
+  background: #ead9c4;
+}
+
+.profile-form-divider {
+  height: 1px;
+  background: #eadfce;
+  margin: 35px 0;
+}
+
+@media (max-width: 600px) {
+  .author-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .author-stat-card {
+    min-height: 115px;
+  }
+}
+
+/* ===== ЛИТЕРАТУРНЫЕ КАРТОЧКИ — ПЕРО И МУЗА ===== */
+
+.author-works {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 75px 25px 100px;
+}
+
+.author-works > h2 {
+  margin: 15px 0 40px;
+  color: #4b3327;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 500;
+  text-align: center;
+}
+
+.author-works > .author-label {
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.author-poems {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.author-poem {
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
+  background: #fffdf8;
+  border: 1px solid #e8dfd3;
+  border-radius: 5px;
+  box-shadow: 0 8px 25px rgba(66, 46, 32, 0.05);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.author-poem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(66, 46, 32, 0.11);
+}
+
+.author-poem::before {
+  content: "“";
+  position: absolute;
+  top: 5px;
+  right: 22px;
+  color: #eee3d5;
+  font-family: Georgia, serif;
+  font-size: 90px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.author-poem-language {
+  position: relative;
+  color: #a17d59;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.author-poem h3 {
+  position: relative;
+  margin: 18px 0;
+  color: #4b3327;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.author-poem-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+  margin: 15px 0 25px;
+  color: #665344;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.author-poem-date {
+  margin-bottom: 15px;
+  color: #a18d79;
+  font-size: 11px;
+}
+
+.author-poem .home-poem-read {
+  display: inline-block;
+  padding-bottom: 4px;
+  color: #79543e;
+  font-size: 12px;
+  border-bottom: 1px solid #b78b65;
+  transition: color 0.2s;
+}
+
+.author-poem .home-poem-read:hover {
+  color: #b78b65;
+}
+
+.author-empty {
+  padding: 35px;
+  background: #fffdf8;
+  border: 1px solid #e8dfd3;
+  color: #82766d;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.author-footer {
+  padding: 35px 20px;
+  border-top: 1px solid #e8dfd3;
+  color: #907d69;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .author-works {
+    padding: 55px 18px 75px;
+  }
+
+  .author-poems {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .author-poem {
+    padding: 25px 22px;
+  }
+
+  .author-poem h3 {
+    font-size: 28px;
+  }
+
+  .author-poem-content {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   МОБИЛЬНОЕ МЕНЮ — ПЕРО И МУЗА
+   ========================================= */
+
+.home-menu-toggle {
+  display: none;
+  border: 1px solid #d8c8b5;
+  background: transparent;
+  color: #594638;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.home-logout-button {
+  border: 1px solid #b9a48d;
+  background: transparent;
+  color: #594638;
+  border-radius: 7px;
+  padding: 9px 17px;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.home-logout-button:hover {
+  background: #594638;
+  color: #fffaf2;
+}
+
+.home-logout-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 650px) {
+  .home-header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 20px;
+  }
+
+  .home-logo {
+    font-size: 27px;
+  }
+
+  .home-menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .home-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 0 0;
+    border-top: 1px solid #e5d9ca;
+  }
+
+  .home-nav.is-open {
+    display: flex;
+  }
+
+  .home-nav > a,
+  .home-nav > button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee5da;
+    font-size: 16px;
+  }
+
+  .home-nav > button {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+  }
+
+  .home-hero {
+    padding: 65px 22px 55px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1.2;
+  }
+
+  .home-intro {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .home-write-button {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .home-poems-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .home-category-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-category {
+    flex-shrink: 0;
+  }
+
+  .home-poems-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-poem-actions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-logo {
+    font-size: 23px;
+  }
+
+  .home-hero h1 {
+    font-size: 31px;
+  }
+
+  .home-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* =========================================
+   МОБИЛЬНАЯ ВИЗИТКА АВТОРА
+   ========================================= */
+
+.author-menu-toggle {
+  display: none;
+  border: 1px solid #d8c8b5;
+  background: transparent;
+  color: #594638;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .author-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .author-logo {
+    font-size: 25px;
+  }
+
+  .author-menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .author-header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 10px;
+    border-top: 1px solid #e5d9ca;
+  }
+
+  .author-header nav.is-open {
+    display: flex;
+  }
+
+  .author-header nav a {
+    display: block;
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee5da;
+    font-size: 16px;
+  }
+
+  .author-profile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .author-cover {
+    height: 190px !important;
+    border-radius: 13px !important;
+  }
+
+  .author-profile h1 {
+    font-size: clamp(25px, 7vw, 34px);
+    overflow-wrap: anywhere;
+  }
+
+  .author-bio {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+  }
+
+  .author-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .author-stat {
+    min-width: 0;
+    padding: 12px 5px;
+    text-align: center;
+  }
+
+  .author-stat strong {
+    display: block;
+    font-size: 23px;
+  }
+
+  .author-stat span {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .author-follow-button {
+    max-width: 100%;
+    min-height: 46px;
+    padding: 12px 25px;
+  }
+
+  .author-works {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .author-poems {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .author-poem {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .author-poem-content {
+    overflow-wrap: anywhere;
+  }
+
+  .author-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .author-logo {
+    font-size: 22px;
+  }
+
+  .author-stat strong {
+    font-size: 20px;
+  }
+
+  .author-stat span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   МОБИЛЬНЫЙ КАТАЛОГ АВТОРОВ
+   ========================================= */
+
+.authors-menu-toggle {
+  display: none;
+  border: 1px solid #d8c8b5;
+  background: transparent;
+  color: #594638;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .authors-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .authors-logo {
+    font-size: 25px;
+  }
+
+  .authors-menu-toggle {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .authors-header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 10px;
+    border-top: 1px solid #e5d9ca;
+  }
+
+  .authors-header nav.is-open {
+    display: flex;
+  }
+
+  .authors-header nav a {
+    display: block;
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee5da;
+    font-size: 16px;
+  }
+
+  .authors-hero {
+    padding: 45px 20px 35px;
+  }
+
+  .authors-hero h1 {
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.2;
+  }
+
+  .authors-hero > p:last-child {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .authors-content {
+    padding: 20px 16px 45px;
+  }
+
+  .authors-search {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .authors-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .authors-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 24px 18px;
+    text-align: center;
+  }
+
+  .authors-avatar,
+  .authors-avatar-placeholder {
+    width: 105px;
+    height: 105px;
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .authors-card h2 {
+    font-size: 22px;
+    overflow-wrap: anywhere;
+  }
+
+  .authors-username {
+    overflow-wrap: anywhere;
+  }
+
+  .authors-bio {
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .authors-followers {
+    font-size: 14px;
+  }
+
+  .authors-link {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .authors-logo {
+    font-size: 22px;
+  }
+
+  .authors-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .authors-card {
+    padding: 20px 14px;
+  }
+}
+
+/* Мобильная страница «Мои подписки» */
+
+@media (max-width: 650px) {
+  .following-feed {
+    margin-top: 45px;
+  }
+
+  .following-section-title,
+  .following-feed h2 {
+    font-size: clamp(22px, 6vw, 28px);
+    line-height: 1.3;
+  }
+
+  .following-feed .author-poem,
+  .author-works .author-poem {
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+
+  .following-feed .author-poem-content {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .following-feed .author-poem h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .following-feed .author-poem-date {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =========================================
+   МОБИЛЬНАЯ СТРАНИЦА ИЗБРАННОГО
+   ========================================= */
+
+.favorites-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 5%;
+  border-bottom: 1px solid #e8ded2;
+}
+
+.favorites-logo {
+  color: #594638;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.favorites-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.favorites-nav nav a {
+  color: #594638;
+  text-decoration: none;
+}
+
+.favorites-menu-toggle {
+  display: none;
+  border: 1px solid #d8c8b5;
+  background: transparent;
+  color: #594638;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.favorites-loading {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .favorites-nav {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .favorites-logo {
+    font-size: 24px;
+  }
+
+  .favorites-menu-toggle {
+    display: block;
+  }
+
+  .favorites-nav nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 10px;
+    border-top: 1px solid #e8ded2;
+  }
+
+  .favorites-nav nav.is-open {
+    display: flex;
+  }
+
+  .favorites-nav nav a {
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee5da;
+  }
+
+  .favorites-header {
+    padding: 40px 18px 25px;
+    text-align: center;
+  }
+
+  .favorites-header h1 {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .favorites-header > p:last-child {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .favorites-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 0 16px 40px;
+  }
+
+  .favorite-poem-card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 18px;
+  }
+
+  .favorite-poem-card h2 {
+    font-size: 22px;
+    overflow-wrap: anywhere;
+  }
+
+  .favorite-poem-content {
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+  }
+
+  .favorite-poem-footer {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .favorite-poem-footer button {
+    max-width: 100%;
+  }
+
+  .favorite-read-link {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .favorites-empty {
+    margin: 20px 16px 40px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  .favorites-empty h2 {
+    font-size: 23px;
+  }
+
+  .favorites-empty p {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .favorites-logo {
+    font-size: 21px;
+  }
+
+  .favorite-poem-card {
+    padding: 19px 14px;
+  }
+}
+
+/* =========================================
+   МОБИЛЬНАЯ СТРАНИЦА СТИХОТВОРЕНИЯ
+   ========================================= */
+
+.single-poem-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.single-poem-authors-link {
+  color: #795e48;
+  text-decoration: none;
+}
+
+.single-poem-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.9;
+}
+
+@media (max-width: 650px) {
+  .single-poem-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 14px 45px;
+  }
+
+  .single-poem-top {
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .single-poem-back,
+  .single-poem-authors-link {
+    font-size: 14px;
+  }
+
+  .single-poem-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 26px 19px;
+  }
+
+  .single-poem-card h1 {
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .single-poem-date {
+    font-size: 13px;
+  }
+
+  .single-poem-content {
+    font-size: 16px;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+  }
+
+  .single-poem-like {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .single-poem-author {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+
+  .single-poem-author img,
+  .single-poem-author .comment-avatar-placeholder {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .comments-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 35px;
+  }
+
+  .comments-section h2 {
+    font-size: clamp(23px, 6vw, 29px);
+    line-height: 1.3;
+  }
+
+  .comments-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .comment-form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .comment-form textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 125px;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .comment-form button {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .comment-message {
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+  }
+
+  .comments-list {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .comment-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 18px 15px;
+  }
+
+  .comment-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .comment-author img,
+  .comment-author .comment-avatar-placeholder {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .comment-content {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .single-poem-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .single-poem-card {
+    padding: 22px 15px;
+  }
+
+  .single-poem-content {
+    font-size: 15px;
+  }
+}
+
+/* Страница добавления стихотворения */
+.new-poem-page {
+  align-items: flex-start;
+  padding: 35px 20px;
+}
+
+.new-poem-card {
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+.new-poem-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.new-poem-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.new-poem-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.new-poem-nav a:hover {
+  text-decoration: underline;
+}
+
+.new-poem-menu-toggle {
+  display: none;
+}
+
+.new-poem-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.new-poem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.new-poem-form label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.new-poem-form input,
+.new-poem-form select,
+.new-poem-form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.new-poem-form textarea {
+  min-height: 240px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.new-poem-form button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.new-poem-message {
+  overflow-wrap: anywhere;
+}
+
+/* Мобильная версия */
+@media (max-width: 650px) {
+  .new-poem-page {
+    padding: 15px 10px;
+  }
+
+  .new-poem-card {
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+
+  .new-poem-header {
+    position: relative;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  .new-poem-menu-toggle {
+    display: block;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    padding: 7px 12px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .new-poem-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 10px;
+  }
+
+  .new-poem-nav.is-open {
+    display: flex;
+  }
+
+  .new-poem-nav a {
+    padding: 12px 5px;
+    border-top: 1px solid rgba(120, 90, 60, 0.18);
+  }
+
+  .new-poem-heading {
+    margin-bottom: 22px;
+  }
+
+  .new-poem-heading .register-label {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.2;
+  }
+
+  .new-poem-form {
+    gap: 10px;
+  }
+
+  .new-poem-form input,
+  .new-poem-form select,
+  .new-poem-form textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .new-poem-form textarea {
+    min-height: 220px;
+  }
+
+  .new-poem-form button {
+    min-height: 48px;
+    padding: 12px;
+  }
+
+  .register-back {
+    display: inline-block;
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .new-poem-card {
+    padding: 18px 12px;
+  }
+
+  .new-poem-header {
+    gap: 10px;
+  }
+}
+
+/* Личный кабинет — адаптация */
+.profile-dashboard-page {
+  padding: 30px 18px;
+  align-items: flex-start;
+}
+
+.profile-dashboard-card {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+.profile-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.profile-dashboard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.profile-dashboard-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.profile-dashboard-nav a:hover {
+  text-decoration: underline;
+}
+
+.profile-menu-toggle {
+  display: none;
+}
+
+.profile-cover-preview {
+  width: 100%;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee5d7;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #806b55;
+  text-align: center;
+}
+
+.profile-cover-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-edit-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.profile-edit-form textarea {
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.profile-edit-form button {
+  width: 100%;
+}
+
+.profile-dashboard-card h1,
+.profile-dashboard-card h2,
+.profile-dashboard-card p {
+  overflow-wrap: anywhere;
+}
+
+/* Мобильная версия */
+@media (max-width: 650px) {
+  .profile-dashboard-page {
+    padding: 14px 9px;
+  }
+
+  .profile-dashboard-card {
+    padding: 20px 15px;
+    border-radius: 16px;
+  }
+
+  .profile-dashboard-header {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .profile-menu-toggle {
+    display: block;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    padding: 7px 12px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .profile-dashboard-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .profile-dashboard-nav.is-open {
+    display: flex;
+  }
+
+  .profile-dashboard-nav a {
+    padding: 12px 5px;
+    border-top: 1px solid rgba(120, 90, 60, 0.18);
+  }
+
+  .profile-dashboard-card h1 {
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.2;
+  }
+
+  .profile-dashboard-card h2 {
+    font-size: 23px;
+  }
+
+  .profile-dashboard-card .register-description {
+    line-height: 1.6;
+  }
+
+  .author-dashboard {
+    margin-top: 25px;
+  }
+
+  .author-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .author-stat-card {
+    min-width: 0;
+    padding: 14px 9px;
+    text-align: center;
+  }
+
+  .author-stat-card strong {
+    font-size: 25px;
+  }
+
+  .author-stat-card span {
+    overflow-wrap: anywhere;
+  }
+
+  .author-dashboard-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .author-dashboard-links a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .profile-form-divider {
+    margin: 25px 0;
+  }
+
+  .profile-cover-preview {
+    height: 150px;
+  }
+
+  .avatar-preview {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .profile-edit-form input,
+  .profile-edit-form textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .profile-edit-form input[type="file"] {
+    font-size: 14px;
+  }
+
+  .profile-edit-form button {
+    min-height: 48px;
+  }
+
+  .profile-field-hint {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .profile-message {
+    overflow-wrap: anywhere;
+  }
+
+  .profile-public-link {
+    display: block;
+    overflow-wrap: anywhere;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .profile-dashboard-card {
+    padding: 17px 11px;
+  }
+
+  .author-stats-grid {
+    gap: 7px;
+  }
+
+  .author-stat-card {
+    padding: 12px 6px;
+  }
+
+  .author-stat-card strong {
+    font-size: 22px;
+  }
+
+  .profile-cover-preview {
+    height: 125px;
+  }
+}
+
+/* Мои произведения — адаптация */
+.my-poems-page {
+  padding: 30px 18px;
+  align-items: flex-start;
+}
+
+.my-poems-card {
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+.my-poems-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.my-poems-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.my-poems-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.my-poems-nav a:hover {
+  text-decoration: underline;
+}
+
+.my-poems-menu-toggle {
+  display: none;
+}
+
+.my-poems-list {
+  width: 100%;
+  min-width: 0;
+}
+
+.my-poem-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.my-poem-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+
+.my-poem-editor {
+  min-width: 0;
+}
+
+.my-poem-editor input,
+.my-poem-editor select,
+.my-poem-editor textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.my-poem-editor textarea {
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.my-poem-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.my-poem-actions button {
+  min-width: 0;
+}
+
+.my-poems-message {
+  overflow-wrap: anywhere;
+}
+
+/* Статусы стихотворений */
+.my-poem-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.my-poem-status.status-approved {
+  background: #e3eee1;
+  color: #42623d;
+}
+
+.my-poem-status.status-pending {
+  background: #f5edda;
+  color: #8a6a2e;
+}
+
+.my-poem-status.status-rejected {
+  background: #f3e2df;
+  color: #994d43;
+}
+
+/* Мобильная версия */
+@media (max-width: 650px) {
+  .my-poems-page {
+    padding: 14px 9px;
+  }
+
+  .my-poems-card {
+    padding: 20px 15px;
+    border-radius: 16px;
+  }
+
+  .my-poems-header {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .my-poems-menu-toggle {
+    display: block;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    padding: 7px 12px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .my-poems-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .my-poems-nav.is-open {
+    display: flex;
+  }
+
+  .my-poems-nav a {
+    padding: 12px 5px;
+    border-top: 1px solid rgba(120, 90, 60, 0.18);
+  }
+
+  .my-poems-card h1 {
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.2;
+  }
+
+  .my-poems-card .register-description {
+    line-height: 1.6;
+  }
+
+  .my-poems-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 13px 10px;
+  }
+
+  .my-poem-item {
+    padding: 16px 12px;
+    margin-bottom: 15px;
+  }
+
+  .my-poem-item h2 {
+    font-size: 21px;
+    line-height: 1.35;
+  }
+
+  .my-poem-content {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .my-poem-date {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .my-poem-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .my-poem-actions button {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  .my-poem-editor h2 {
+    font-size: 20px;
+  }
+
+  .my-poem-editor input,
+  .my-poem-editor select,
+  .my-poem-editor textarea {
+    font-size: 16px;
+  }
+
+  .my-poem-editor textarea {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 380px) {
+  .my-poems-card {
+    padding: 17px 11px;
+  }
+
+  .my-poem-item {
+    padding: 13px 10px;
+  }
+}
+
+/* Адаптация кабинета администратора */
+
+.admin-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+.admin-logo {
+  color: #49372b;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.admin-nav a {
+  color: #655044;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.admin-nav a:hover {
+  color: #a16b45;
+}
+
+.admin-menu-toggle {
+  display: none;
+  border: 1px solid #d8c9b9;
+  background: #fffaf4;
+  color: #49372b;
+  border-radius: 9px;
+  width: 44px;
+  height: 42px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.admin-section-label {
+  color: #a17b5d;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.admin-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 25px 60px;
+  box-sizing: border-box;
+}
+
+.admin-container h1 {
+  overflow-wrap: anywhere;
+}
+
+.admin-description {
+  line-height: 1.6;
+  color: #806d5d;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.admin-tabs button {
+  min-height: 46px;
+  padding: 11px 20px;
+  border: 1px solid #ddcdbb;
+  border-radius: 10px;
+  background: #fffaf4;
+  color: #604a39;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-tabs button.active {
+  background: #75543e;
+  border-color: #75543e;
+  color: white;
+}
+
+.admin-item {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.admin-item-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-actions button,
+.admin-refresh {
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-actions button:disabled,
+.admin-refresh:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-empty {
+  padding: 20px 0;
+  color: #806d5d;
+}
+
+.admin-back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #805b40;
+}
+
+.admin-loading {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .admin-header {
+    padding: 16px 18px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+
+  .admin-logo {
+    font-size: 22px;
+  }
+
+  .admin-menu-toggle {
+    display: block;
+  }
+
+  .admin-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0;
+    border-top: 1px solid #e6d9cb;
+  }
+
+  .admin-nav.is-open {
+    display: flex;
+  }
+
+  .admin-nav a {
+    padding: 13px 8px;
+    border-bottom: 1px solid #eee4d9;
+  }
+
+  .admin-container {
+    padding: 15px 16px 45px;
+  }
+
+  .admin-container h1 {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .admin-description {
+    font-size: 14px;
+  }
+
+  .admin-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 22px 0;
+  }
+
+  .admin-tabs button {
+    padding: 10px 7px;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .admin-moderation-section h2 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .admin-item {
+    padding: 18px 15px;
+    margin-bottom: 16px;
+  }
+
+  .admin-item h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .admin-item-date {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-item-content {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .admin-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .admin-actions button {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 7px;
+    font-size: 13px;
+  }
+
+  .admin-refresh {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .admin-message {
+    overflow-wrap: anywhere;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .admin-container h1 {
+    font-size: 24px;
+  }
+
+  .admin-tabs button {
+    font-size: 12px;
+  }
+
+  .admin-actions {
+    grid-template-columns: 1fr;
+  }
+}
