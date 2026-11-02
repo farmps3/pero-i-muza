@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "../../../lib/supabase";
@@ -22,7 +22,7 @@ type Poem = {
   created_at: string;
 };
 
-export default function AuthorPage() {
+function AuthorPageContent() {
   const params = useParams();
   const username = params.username as string;
 
@@ -74,7 +74,10 @@ export default function AuthorPage() {
       if (cancelled) return;
 
       if (poemsError) {
-        console.error("Ошибка загрузки стихотворений:", poemsError.message);
+        console.error(
+          "Ошибка загрузки стихотворений:",
+          poemsError.message
+        );
       }
 
       setPoems(authorPoems || []);
@@ -102,6 +105,7 @@ export default function AuthorPage() {
       }
 
       const { data: authData } = await supabase.auth.getUser();
+
       if (cancelled) return;
 
       const userId = authData.user?.id || null;
@@ -116,6 +120,7 @@ export default function AuthorPage() {
           .maybeSingle();
 
         if (cancelled) return;
+
         setIsFollowing(!!followData);
       } else {
         setIsFollowing(false);
@@ -202,7 +207,9 @@ export default function AuthorPage() {
           <span>✧</span>
           <p className="author-label">СТРАНИЦА НЕ НАЙДЕНА</p>
           <h1>Автор не найден</h1>
-          <p>Возможно, эта страница была удалена или адрес указан неверно.</p>
+          <p>
+            Возможно, эта страница была удалена или адрес указан неверно.
+          </p>
           <Link href="/" className="author-back-link">
             Вернуться на главную
           </Link>
@@ -238,9 +245,11 @@ export default function AuthorPage() {
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             На главную
           </Link>
+
           <Link href="/authors" onClick={() => setMobileMenuOpen(false)}>
             Авторы
           </Link>
+
           <Link href="/following" onClick={() => setMobileMenuOpen(false)}>
             Мои подписки
           </Link>
@@ -261,6 +270,7 @@ export default function AuthorPage() {
               <small>ЛИТЕРАТУРНОЕ ПРОСТРАНСТВО</small>
             </div>
           )}
+
           <div className="author-cover-shade" />
         </div>
 
@@ -279,7 +289,9 @@ export default function AuthorPage() {
         </div>
 
         <div className="author-identity">
-          <p className="author-label">АВТОР ЛИТЕРАТУРНОГО ПРОСТРАНСТВА</p>
+          <p className="author-label">
+            АВТОР ЛИТЕРАТУРНОГО ПРОСТРАНСТВА
+          </p>
 
           <h1>{authorName}</h1>
 
@@ -339,9 +351,11 @@ export default function AuthorPage() {
         <div className="author-works-heading">
           <p className="author-label">ТВОРЧЕСТВО</p>
           <h2>Произведения автора</h2>
+
           <p className="author-works-description">
             Каждое стихотворение — отдельная история, сохранённая в словах.
           </p>
+
           <div className="author-title-divider">
             <span />
             ✦
@@ -358,11 +372,17 @@ export default function AuthorPage() {
         ) : (
           <div className="author-poems author-poems-refined">
             {poems.map((poem) => (
-              <article className="author-poem author-poem-refined" key={poem.id}>
+              <article
+                className="author-poem author-poem-refined"
+                key={poem.id}
+              >
                 <div className="author-poem-topline">
                   <p className="author-poem-language">
-                    {poem.language === "ru" ? "РУССКИЙ ЯЗЫК" : "ENGLISH"}
+                    {poem.language === "ru"
+                      ? "РУССКИЙ ЯЗЫК"
+                      : "ENGLISH"}
                   </p>
+
                   <span className="author-poem-star">✦</span>
                 </div>
 
@@ -370,7 +390,9 @@ export default function AuthorPage() {
 
                 <div className="author-poem-divider" />
 
-                <p className="author-poem-content">{poem.content}</p>
+                <p className="author-poem-content">
+                  {poem.content}
+                </p>
 
                 <div className="author-poem-bottom">
                   <p className="author-poem-date">
@@ -396,5 +418,22 @@ export default function AuthorPage() {
         <span>✦</span>
       </footer>
     </main>
+  );
+}
+
+export default function AuthorPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="author-page author-page-refined">
+          <div className="author-loading">
+            <span className="author-loading-mark">✦</span>
+            <p>Открываем страницу автора...</p>
+          </div>
+        </main>
+      }
+    >
+      <AuthorPageContent />
+    </Suspense>
   );
 }
